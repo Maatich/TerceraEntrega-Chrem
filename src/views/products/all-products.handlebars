@@ -1,0 +1,30 @@
+    <div class="row">
+        {{#each products}}
+        <div class="col-md-4">
+            <div class="card">
+                    <div class="card-body">
+                        <form action="/api/carts/mycart" method="POST"> 
+                        <input name="title" value="{{title}}" type="hidden">
+                        <h6 class="card-tittle d-flex justify-content-center aline-item-center" name="title">{{title}}</h6>
+                        <br>
+                        
+                        <img src="../../public/img/imagen.png" name="thumbnail" height="150">
+                        <br>
+                        <br>
+                        <input name="description" value="{{description}}" type="hidden">
+                        <p name="description">{{description}}</p>
+                        <input name="price" value="{{price}}" type="hidden">
+                        <h5 name="price">Precio: ${{price}}</h5>
+                        <br>
+                        <input name="_id" value="{{_id}}" type="hidden">
+                        <input name="stock" value="{{stock}}" type="hidden">
+                        <p name="stock">Stock disponible: {{stock}}</p>
+                        <br>
+                            <button class="btn btn-secondary btn-block btn-sm">Agregar al carrito</button>
+                        </form>
+                    </div>
+            </div>
+            <br>
+        </div>
+        {{/each}}
+    </div>

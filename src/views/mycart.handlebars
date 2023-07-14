@@ -1,0 +1,27 @@
+<div class="row">
+    {{#each products}}
+    <div class="col-md-5">
+        <div class="card" width="250">
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-between align-items-center">{{title}}</h5>
+                <img src="{{thumbnail}}" height="100">
+                <br>
+                <p>Descripción: {{description}}</p>
+                <h6>Precio: ${{price}}</h6>
+                <h7>Cantidad adquirida: {{quantity}}</h7>
+                <br>
+                <br>
+                <form action="/api/carts/{{cid}}/products/{{pid}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div>
+        <button id="purchaseButton" data-cart-id={{id}}>Comprar</button>
+    </div>
+</div>
+<script src="/js/purchase.js"></script>

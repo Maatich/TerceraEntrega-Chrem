@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="container-fluid">
+      <li class="navbar-brand">
+        <a href="/">
+          <h3>DanCa</h3>
+        </a>
+      </li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ml-3">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="products">Nuestros productos</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="found">Mascotas encontradas</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="losses">Mascotas perdidas</a>
+          </li>
+          <li class="nav-item ml-3">
+            <a class="nav-link" href="about">Nosotros</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          {{#if user}}
+          <li class="nav-item">
+            <a class="nav-link" href="/chat">¿Necesitas ayuda?</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Tu perfil
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/profile">Ver tu perfil</a></li>
+              <li><a class="dropdown-item" href="/shopping">Ver tus compras</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/api/sessions/logout/">Salir de tu cuenta</a></li>
+            </ul>
+          </li>
+          <ul class="navbar-nav ml-1">
+          <li class="nav-item">
+            <a href="cart">
+              <img src="/img/carrito.png" alt="carrito" width="25px">
+            </a>
+          </li>
+        </ul>
+          {{else}}  
+          <li class="nav-item">
+            <a class="nav-link" href="/signin">Ingresa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Crea tu cuenta</a>
+          </li>
+        </ul>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>
